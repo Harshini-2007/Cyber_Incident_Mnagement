@@ -2,6 +2,11 @@ from flask import Flask, render_template, request, session, redirect, url_for, s
 import mysql.connector
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
+from dotenv import load_dotenv
+
+from anomaly_detector import extract_features, detect_anomalies
+
+load_dotenv()
 
 # Import our ML functions
 from anomaly_detector import extract_features, detect_anomalies
@@ -16,10 +21,10 @@ app.secret_key = "employee-portal-secret-key"
 
 def get_db_connection():
     connection = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="Harshi@Books",
-        database="cyber_security_db"
+        host=os.environ.get("DB_HOST", "localhost"),
+        user=os.environ.get("DB_USER", "root"),
+        password=os.environ.get("DB_PASSWORD"),
+        database=os.environ.get("DB_NAME", "cyber_security_db")
     )
     return connection
 
