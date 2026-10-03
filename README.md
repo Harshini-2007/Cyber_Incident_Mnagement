@@ -8,14 +8,14 @@ The system combines an **Organization Employee Portal** with a backend security 
 
 ## ✨ Features
 
-👤 Employee Login & Registration
-📝 Automatic Security Activity Logging
-📁 File Access & Download Monitoring
-🔑 Login & Password Activity Monitoring
-🧠 Isolation Forest-based Anomaly Detection
-📊 Security Monitoring Dashboard
-🚨 Anomaly Scores & Security Alerts
-🌐 IP Address & Timestamp Tracking
+👤 Employee Login & Registration <br>
+📝 Automatic Security Activity Logging <br>
+📁 File Access & Download Monitoring <br>
+🔑 Login & Password Activity Monitoring <br>
+🧠 Isolation Forest-based Anomaly Detection <br>
+📊 Security Monitoring Dashboard <br>
+🚨 Anomaly Scores & Security Alerts <br>
+🌐 IP Address & Timestamp Tracking <br>
 
 ## 🏗️ Project Architecture
 
@@ -75,6 +75,6 @@ Security Dashboard
 
 ## 👩‍💻 Author
 
-**Harshini Perumal**
-B.E. Artificial Intelligence & Machine Learning
-Nitte Meenakshi Institute of Technology, Bengaluru
+**Harshini Perumal** <br>
+B.E. Artificial Intelligence & Machine Learning <br>
+Nitte Meenakshi Institute of Technology, Bengaluru <br>
