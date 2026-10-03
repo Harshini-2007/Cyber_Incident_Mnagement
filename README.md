@@ -1,0 +1,80 @@
+# 🔐 Cybersecurity Log Monitoring & Anomaly Detection System
+
+A cybersecurity web application that monitors employee activity, records application-level security logs, and uses **Isolation Forest** to detect unusual user behavior.
+
+## 📖 Overview
+
+The system combines an **Organization Employee Portal** with a backend security monitoring system. Employee activities such as login attempts, file access, downloads, profile actions, and password changes are automatically recorded and analyzed for anomalous behavior.
+
+## ✨ Features
+
+👤 Employee Login & Registration <br>
+📝 Automatic Security Activity Logging <br>
+📁 File Access & Download Monitoring <br>
+🔑 Login & Password Activity Monitoring <br>
+🧠 Isolation Forest-based Anomaly Detection <br>
+📊 Security Monitoring Dashboard <br>
+🚨 Anomaly Scores & Security Alerts <br>
+🌐 IP Address & Timestamp Tracking <br>
+
+## 🏗️ Project Architecture
+
+```text
+Employee Portal
+      │
+      ▼
+Flask Backend
+      │
+      ▼
+MySQL Security Logs
+      │
+      ▼
+Feature Extraction
+      │
+      ▼
+Isolation Forest
+      │
+      ▼
+Normal / Anomaly
+      │
+      ▼
+Security Dashboard
+```
+
+## 🧠 Model Details
+
+**Model:** Isolation Forest <br>
+**Type:** Unsupervised Anomaly Detection <br>
+**Features:** Failed logins, total events, file activity, profile activity, password changes, and unique IPs. <br>
+
+## 🛠️ Tech Stack
+
+**Machine Learning:** Python, Scikit-learn, Isolation Forest <br>
+**Backend:** Flask, Python <br>
+**Database:** MySQL <br>
+**Frontend:** HTML, CSS, JavaScript <br>
+**Security:** Werkzeug Password Hashing, Session Authentication <br>
+
+## Images
+## Sign up 
+<img width="206" height="277" alt="image" src="https://github.com/user-attachments/assets/19563a94-1662-4370-a960-12c47bf4b87a" />  <br>
+## Portal
+<img width="666" height="228" alt="image" src="https://github.com/user-attachments/assets/f3118598-eeff-480b-914e-83e0b124a77c" /> <br>
+## Security portal login
+<img width="230" height="195" alt="image" src="https://github.com/user-attachments/assets/dba26f4a-1c3a-4715-9fbf-cf868fa534d3" /> <br>
+## Logs Anomaly Detection
+<img width="650" height="377" alt="image" src="https://github.com/user-attachments/assets/c57009bc-0da4-44c3-94f0-37f9dbabfae3" /> <br>
+<img width="594" height="343" alt="image" src="https://github.com/user-attachments/assets/5f0c7967-b1e7-4076-9fac-46a60c3358ed" /> <br>
+
+
+
+
+
+
+
+
+## 👩‍💻 Author
+
+**Harshini Perumal** <br>
+B.E. Artificial Intelligence & Machine Learning <br>
+Nitte Meenakshi Institute of Technology, Bengaluru <br>
