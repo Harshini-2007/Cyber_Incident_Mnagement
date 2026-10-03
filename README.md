@@ -43,24 +43,24 @@ Security Dashboard
 
 ## 🧠 Model Details
 
-**Model:** Isolation Forest
-**Type:** Unsupervised Anomaly Detection
-**Features:** Failed logins, total events, file activity, profile activity, password changes, and unique IPs.
+**Model:** Isolation Forest <br>
+**Type:** Unsupervised Anomaly Detection <br>
+**Features:** Failed logins, total events, file activity, profile activity, password changes, and unique IPs. <br>
 
 ## 🛠️ Tech Stack
 
-**Machine Learning:** Python, Scikit-learn, Isolation Forest
-**Backend:** Flask, Python
-**Database:** MySQL
-**Frontend:** HTML, CSS, JavaScript
-**Security:** Werkzeug Password Hashing, Session Authentication
+**Machine Learning:** Python, Scikit-learn, Isolation Forest <br>
+**Backend:** Flask, Python <br>
+**Database:** MySQL <br>
+**Frontend:** HTML, CSS, JavaScript <br>
+**Security:** Werkzeug Password Hashing, Session Authentication <br>
 
 ## Images
-<img width="206" height="277" alt="image" src="https://github.com/user-attachments/assets/19563a94-1662-4370-a960-12c47bf4b87a" /> 
-<img width="666" height="228" alt="image" src="https://github.com/user-attachments/assets/f3118598-eeff-480b-914e-83e0b124a77c" />
-<img width="230" height="195" alt="image" src="https://github.com/user-attachments/assets/dba26f4a-1c3a-4715-9fbf-cf868fa534d3" /> 
-<img width="650" height="377" alt="image" src="https://github.com/user-attachments/assets/c57009bc-0da4-44c3-94f0-37f9dbabfae3" />
-<img width="594" height="343" alt="image" src="https://github.com/user-attachments/assets/5f0c7967-b1e7-4076-9fac-46a60c3358ed" />
+<img width="206" height="277" alt="image" src="https://github.com/user-attachments/assets/19563a94-1662-4370-a960-12c47bf4b87a" />  <br>
+<img width="666" height="228" alt="image" src="https://github.com/user-attachments/assets/f3118598-eeff-480b-914e-83e0b124a77c" /> <br>
+<img width="230" height="195" alt="image" src="https://github.com/user-attachments/assets/dba26f4a-1c3a-4715-9fbf-cf868fa534d3" /> <br>
+<img width="650" height="377" alt="image" src="https://github.com/user-attachments/assets/c57009bc-0da4-44c3-94f0-37f9dbabfae3" /> <br>
+<img width="594" height="343" alt="image" src="https://github.com/user-attachments/assets/5f0c7967-b1e7-4076-9fac-46a60c3358ed" /> <br>
 
 
 
