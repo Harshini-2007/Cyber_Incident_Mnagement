@@ -56,9 +56,13 @@ Security Dashboard
 **Security:** Werkzeug Password Hashing, Session Authentication <br>
 
 ## Images
+## Sign up 
 <img width="206" height="277" alt="image" src="https://github.com/user-attachments/assets/19563a94-1662-4370-a960-12c47bf4b87a" />  <br>
+## Portal
 <img width="666" height="228" alt="image" src="https://github.com/user-attachments/assets/f3118598-eeff-480b-914e-83e0b124a77c" /> <br>
+## Security portal login
 <img width="230" height="195" alt="image" src="https://github.com/user-attachments/assets/dba26f4a-1c3a-4715-9fbf-cf868fa534d3" /> <br>
+## Logs Anomaly Detection
 <img width="650" height="377" alt="image" src="https://github.com/user-attachments/assets/c57009bc-0da4-44c3-94f0-37f9dbabfae3" /> <br>
 <img width="594" height="343" alt="image" src="https://github.com/user-attachments/assets/5f0c7967-b1e7-4076-9fac-46a60c3358ed" /> <br>
 
