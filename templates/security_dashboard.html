@@ -2,15 +2,12 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Security Monitoring</title>
 
     <style>
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -23,13 +20,10 @@
             color: #1f2937;
         }
 
-        /* NAVBAR */
-
         .navbar {
             background: #0f2747;
             color: white;
             padding: 18px 40px;
-
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -44,8 +38,6 @@
             text-decoration: none;
             font-size: 14px;
         }
-
-        /* MAIN */
 
         .container {
             width: 92%;
@@ -66,8 +58,6 @@
             color: #64748b;
         }
 
-        /* SUMMARY CARDS */
-
         .cards {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -79,8 +69,7 @@
             background: white;
             padding: 24px;
             border-radius: 10px;
-
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
         .card h3 {
@@ -94,15 +83,12 @@
             font-weight: bold;
         }
 
-        /* SECTION */
-
         .section {
             background: white;
             padding: 25px;
             border-radius: 10px;
             margin-bottom: 30px;
-
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
         .section h2 {
@@ -115,8 +101,6 @@
             font-size: 14px;
             margin-bottom: 20px;
         }
-
-        /* TABLE */
 
         .table-container {
             overflow-x: auto;
@@ -139,8 +123,6 @@
             background: #f8fafc;
             color: #475569;
         }
-
-        /* ML STATUS */
 
         .status {
             display: inline-block;
@@ -170,8 +152,6 @@
             font-weight: bold;
         }
 
-        /* ANOMALOUS LOG */
-
         .anomaly-row {
             background: #fee2e2;
         }
@@ -186,341 +166,214 @@
             color: #b91c1c;
         }
 
-        /* RESPONSIVE */
-
         @media (max-width: 900px) {
-
             .cards {
                 grid-template-columns: repeat(2, 1fr);
             }
-
         }
 
         @media (max-width: 600px) {
-
             .cards {
                 grid-template-columns: 1fr;
             }
-
         }
-
     </style>
 
 </head>
 
-
 <body>
 
+    <div class="navbar">
+        <h2>Security Monitoring</h2>
 
-<!-- NAVBAR -->
-
-<div class="navbar">
-
-    <h2>Security Monitoring</h2>
-
-    <a href="/security">
-        Security Access
-    </a>
-
-</div>
-
-
-<!-- MAIN -->
-
-<div class="container">
-
-
-    <!-- HEADING -->
-
-    <div class="heading">
-
-        <h1>
-            Security Monitoring Dashboard
-        </h1>
-
-        <p>
-            Monitor employee activity and review machine-learning-based security anomalies.
-        </p>
-
+        <a href="/security">
+            Security Access
+        </a>
     </div>
 
+    <div class="container">
 
-    <!-- SUMMARY CARDS -->
+        <div class="heading">
+            <h1>Security Monitoring Dashboard</h1>
 
-    <div class="cards">
+            <p>
+                Monitor employee activity and review machine-learning-based security anomalies.
+            </p>
+        </div>
 
+        <div class="cards">
 
-        <div class="card">
+            <div class="card">
+                <h3>TOTAL LOGS</h3>
+                <div class="number">{{ total_logs }}</div>
+            </div>
 
-            <h3>
-                TOTAL LOGS
-            </h3>
+            <div class="card">
+                <h3>NORMAL ACTIVITY</h3>
+                <div class="number">{{ normal_logs }}</div>
+            </div>
 
-            <div class="number">
-                {{ total_logs }}
+            <div class="card">
+                <h3>ANOMALOUS USERS</h3>
+                <div class="number">{{ suspicious_logs }}</div>
+            </div>
+
+            <div class="card">
+                <h3>ACTIVE ALERTS</h3>
+                <div class="number">{{ active_alerts }}</div>
             </div>
 
         </div>
 
+        <div class="section">
 
-        <div class="card">
+            <h2>Machine Learning Analysis</h2>
 
-            <h3>
-                NORMAL ACTIVITY
-            </h3>
+            <p class="section-description">
+                Isolation Forest analyzes employee activity patterns
+                and identifies behavior that differs from the observed activity.
+            </p>
 
-            <div class="number">
-                {{ normal_logs }}
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Total Events</th>
+                            <th>Failed Logins</th>
+                            <th>File Downloads</th>
+                            <th>File Accesses</th>
+                            <th>Unique IPs</th>
+                            <th>Anomaly Score</th>
+                            <th>ML Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        {% for user in analyzed_users %}
+
+                        <tr>
+
+                            <td>{{ user.username }}</td>
+
+                            <td>{{ user.total_events }}</td>
+
+                            <td>{{ user.failed_logins }}</td>
+
+                            <td>{{ user.file_downloads }}</td>
+
+                            <td>{{ user.file_accesses }}</td>
+
+                            <td>{{ user.unique_ips }}</td>
+
+                            <td>
+                                {% if user.status == "Anomaly" %}
+                                    <span class="score-anomaly">
+                                        {{ user.anomaly_score }}
+                                    </span>
+                                {% else %}
+                                    <span class="score-normal">
+                                        {{ user.anomaly_score }}
+                                    </span>
+                                {% endif %}
+                            </td>
+
+                            <td>
+                                {% if user.status == "Anomaly" %}
+                                    <span class="status anomaly">
+                                        Anomaly
+                                    </span>
+                                {% else %}
+                                    <span class="status normal">
+                                        Normal
+                                    </span>
+                                {% endif %}
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
             </div>
 
         </div>
 
+        <div class="section">
 
-        <div class="card">
+            <h2>Recent Security Events</h2>
 
-            <h3>
-                ANOMALOUS USERS
-            </h3>
+            <div class="table-container">
 
-            <div class="number">
-                {{ suspicious_logs }}
-            </div>
+                <table>
 
-        </div>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>User</th>
+                            <th>Event</th>
+                            <th>IP Address</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
 
+                    <tbody>
 
-        <div class="card">
+                        {% for log in logs %}
 
-            <h3>
-                ACTIVE ALERTS
-            </h3>
-
-            <div class="number">
-                {{ active_alerts }}
-            </div>
-
-        </div>
-
-
-    </div>
-
-
-    <!-- MACHINE LEARNING ANALYSIS -->
-
-    <div class="section">
-
-        <h2>
-            Machine Learning Analysis
-        </h2>
-
-        <p class="section-description">
-
-            Isolation Forest analyzes employee activity patterns
-            and identifies behavior that differs from the observed activity.
-
-        </p>
-
-
-        <div class="table-container">
-
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>User</th>
-
-                        <th>Total Events</th>
-
-                        <th>Failed Logins</th>
-
-                        <th>File Downloads</th>
-
-                        <th>File Accesses</th>
-
-                        <th>Unique IPs</th>
-
-                        <th>Anomaly Score</th>
-
-                        <th>ML Status</th>
-
-                    </tr>
-
-                </thead>
-
-
-                <tbody>
-
-                    {% for user in analyzed_users %}
-
-                    <tr>
-
-                        <td>
-                            {{ user.username }}
-                        </td>
-
-                        <td>
-                            {{ user.total_events }}
-                        </td>
-
-                        <td>
-                            {{ user.failed_logins }}
-                        </td>
-
-                        <td>
-                            {{ user.file_downloads }}
-                        </td>
-
-                        <td>
-                            {{ user.file_accesses }}
-                        </td>
-
-                        <td>
-                            {{ user.unique_ips }}
-                        </td>
-
-                        <td>
-
-                            {% if user.status == "Anomaly" %}
-
-                                <span class="score-anomaly">
-                                    {{ user.anomaly_score }}
-                                </span>
-
-                            {% else %}
-
-                                <span class="score-normal">
-                                    {{ user.anomaly_score }}
-                                </span>
-
-                            {% endif %}
-
-                        </td>
-
-
-                        <td>
-
-                            {% if user.status == "Anomaly" %}
-
-                                <span class="status anomaly">
-                                    Anomaly
-                                </span>
-
-                            {% else %}
-
-                                <span class="status normal">
-                                    Normal
-                                </span>
-
-                            {% endif %}
-
-                        </td>
-
-                    </tr>
-
-                    {% endfor %}
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
-
-
-    <!-- RECENT SECURITY EVENTS -->
-
-    <div class="section">
-
-        <h2>
-            Recent Security Events
-        </h2>
-
-
-        <div class="table-container">
-
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>Time</th>
-
-                        <th>User</th>
-
-                        <th>Event</th>
-
-                        <th>IP Address</th>
-
-                        <th>Description</th>
-
-                    </tr>
-
-                </thead>
-
-
-                <tbody>
-
-                    {% for log in logs %}
-
-                    <tr
-                        {% if log.event_type == "Failed Login"
-                           or log.event_type == "Failed Password Change" %}
-                            class="anomaly-row"
-                        {% endif %}
-                    >
-
-                        <td>
-                            {{ log.timestamp }}
-                        </td>
-
-                        <td>
-                            {{ log.username or "Unknown" }}
-                        </td>
-
-                        <td>
-
+                        <tr
                             {% if log.event_type == "Failed Login"
                                or log.event_type == "Failed Password Change" %}
-
-                                <span class="event-anomaly">
-                                    {{ log.event_type }}
-                                </span>
-
-                            {% else %}
-
-                                {{ log.event_type }}
-
+                                class="anomaly-row"
                             {% endif %}
+                        >
 
-                        </td>
+                            <td>{{ log.timestamp }}</td>
 
-                        <td>
-                            {{ log.ip_address }}
-                        </td>
+                            <td>
+                                {{ log.username or "Unknown" }}
+                            </td>
 
-                        <td>
-                            {{ log.description }}
-                        </td>
+                            <td>
 
-                    </tr>
+                                {% if log.event_type == "Failed Login"
+                                   or log.event_type == "Failed Password Change" %}
 
-                    {% endfor %}
+                                    <span class="event-anomaly">
+                                        {{ log.event_type }}
+                                    </span>
 
-                </tbody>
+                                {% else %}
 
-            </table>
+                                    {{ log.event_type }}
+
+                                {% endif %}
+
+                            </td>
+
+                            <td>{{ log.ip_address }}</td>
+
+                            <td>{{ log.description }}</td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
 
         </div>
 
     </div>
-
-
-</div>
-
 
 </body>
 

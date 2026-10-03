@@ -1,12 +1,10 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Employee Portal</title>
@@ -20,117 +18,78 @@
             font-family: Arial, sans-serif;
         }
 
-
         body {
             background: #f4f6f8;
             min-height: 100vh;
         }
 
-
-        /* ---------------- NAVBAR ---------------- */
+        /* NAVBAR */
 
         .navbar {
-
             background: #243b53;
-
             color: white;
-
             padding: 18px 40px;
 
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
         }
 
-
         .portal-name {
-
             font-size: 20px;
-
             font-weight: 600;
         }
 
-
         .logout {
-
             color: white;
-
             text-decoration: none;
-
             font-size: 14px;
-
             padding: 8px 14px;
 
             border: 1px solid rgba(255,255,255,0.5);
-
             border-radius: 6px;
         }
 
-
         .logout:hover {
-
             background: rgba(255,255,255,0.1);
         }
 
-
-        /* ---------------- MAIN CONTAINER ---------------- */
+        /* MAIN CONTAINER */
 
         .container {
-
             max-width: 1000px;
-
             margin: 50px auto;
-
             padding: 0 25px;
         }
 
-
-        /* ---------------- WELCOME ---------------- */
+        /* WELCOME */
 
         .welcome {
-
             margin-bottom: 35px;
         }
 
-
         .welcome h1 {
-
             color: #1f2933;
-
             font-size: 30px;
-
             margin-bottom: 8px;
         }
 
-
         .welcome p {
-
             color: #7b8794;
-
             font-size: 15px;
         }
 
-
-        /* ---------------- CARDS ---------------- */
+        /* CARDS */
 
         .cards {
-
             display: grid;
-
             grid-template-columns: repeat(3, 1fr);
-
             gap: 22px;
         }
 
-
         .card {
-
             background: white;
-
             padding: 30px;
-
             border-radius: 10px;
 
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
@@ -138,61 +97,43 @@
             min-height: 190px;
         }
 
-
         .card h2 {
-
             color: #243447;
-
             font-size: 18px;
-
             margin-bottom: 12px;
         }
 
-
         .card p {
-
             color: #7b8794;
-
             font-size: 14px;
-
             line-height: 1.6;
-
             margin-bottom: 25px;
         }
 
-
         .card a {
-
             display: inline-block;
 
             color: #243b53;
-
             text-decoration: none;
 
             font-weight: 600;
-
             font-size: 14px;
 
             padding: 9px 15px;
 
             border: 1px solid #d9e2ec;
-
             border-radius: 6px;
         }
 
-
         .card a:hover {
-
             background: #f4f6f8;
         }
 
-
-        /* ---------------- RESPONSIVE ---------------- */
+        /* RESPONSIVE */
 
         @media (max-width: 800px) {
 
             .cards {
-
                 grid-template-columns: 1fr;
             }
 
@@ -202,88 +143,63 @@
 
 </head>
 
-
 <body>
-
 
     <!-- NAVIGATION BAR -->
 
     <div class="navbar">
 
         <div class="portal-name">
-
             Organization Employee Portal
-
         </div>
 
-
         <a href="/logout" class="logout">
-
             Logout
-
         </a>
 
     </div>
-
 
 
     <!-- MAIN CONTENT -->
 
     <div class="container">
 
-
         <!-- WELCOME MESSAGE -->
 
         <div class="welcome">
 
             <h1>
-
                 Welcome, {{ username }}
-
             </h1>
 
-
             <p>
-
                 Manage your account and access your files.
-
             </p>
 
         </div>
-
 
 
         <!-- DASHBOARD CARDS -->
 
         <div class="cards">
 
-
             <!-- FILES -->
 
             <div class="card">
 
                 <h2>
-
                     My Files
-
                 </h2>
 
-
                 <p>
-
                     View and access your available files.
-
                 </p>
 
-
                 <a href="/files">
-
                     View Files
-
                 </a>
 
             </div>
-
 
 
             <!-- PROFILE -->
@@ -291,27 +207,18 @@
             <div class="card">
 
                 <h2>
-
                     My Profile
-
                 </h2>
 
-
                 <p>
-
                     View and update your profile information.
-
                 </p>
 
-
                 <a href="/profile">
-
                     View Profile
-
                 </a>
 
             </div>
-
 
 
             <!-- SETTINGS -->
@@ -319,385 +226,24 @@
             <div class="card">
 
                 <h2>
-
                     Account Settings
-
                 </h2>
 
-
                 <p>
-
                     Manage your account settings and password.
-
                 </p>
 
-
                 <a href="/settings">
-
                     Settings
-
                 </a>
 
             </div>
 
-
         </div>
 
     </div>
-
 
 </body>
 
 </html>
-```html
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Employee Portal</title>
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-
-        body {
-            background: #f4f6f8;
-            min-height: 100vh;
-        }
-
-
-        /* ---------------- NAVBAR ---------------- */
-
-        .navbar {
-
-            background: #243b53;
-
-            color: white;
-
-            padding: 18px 40px;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-        }
-
-
-        .portal-name {
-
-            font-size: 20px;
-
-            font-weight: 600;
-        }
-
-
-        .logout {
-
-            color: white;
-
-            text-decoration: none;
-
-            font-size: 14px;
-
-            padding: 8px 14px;
-
-            border: 1px solid rgba(255,255,255,0.5);
-
-            border-radius: 6px;
-        }
-
-
-        .logout:hover {
-
-            background: rgba(255,255,255,0.1);
-        }
-
-
-        /* ---------------- MAIN CONTAINER ---------------- */
-
-        .container {
-
-            max-width: 1000px;
-
-            margin: 50px auto;
-
-            padding: 0 25px;
-        }
-
-
-        /* ---------------- WELCOME ---------------- */
-
-        .welcome {
-
-            margin-bottom: 35px;
-        }
-
-
-        .welcome h1 {
-
-            color: #1f2933;
-
-            font-size: 30px;
-
-            margin-bottom: 8px;
-        }
-
-
-        .welcome p {
-
-            color: #7b8794;
-
-            font-size: 15px;
-        }
-
-
-        /* ---------------- CARDS ---------------- */
-
-        .cards {
-
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 22px;
-        }
-
-
-        .card {
-
-            background: white;
-
-            padding: 30px;
-
-            border-radius: 10px;
-
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
-
-            min-height: 190px;
-        }
-
-
-        .card h2 {
-
-            color: #243447;
-
-            font-size: 18px;
-
-            margin-bottom: 12px;
-        }
-
-
-        .card p {
-
-            color: #7b8794;
-
-            font-size: 14px;
-
-            line-height: 1.6;
-
-            margin-bottom: 25px;
-        }
-
-
-        .card a {
-
-            display: inline-block;
-
-            color: #243b53;
-
-            text-decoration: none;
-
-            font-weight: 600;
-
-            font-size: 14px;
-
-            padding: 9px 15px;
-
-            border: 1px solid #d9e2ec;
-
-            border-radius: 6px;
-        }
-
-
-        .card a:hover {
-
-            background: #f4f6f8;
-        }
-
-
-        /* ---------------- RESPONSIVE ---------------- */
-
-        @media (max-width: 800px) {
-
-            .cards {
-
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-    </style>
-
-</head>
-
-
-<body>
-
-
-    <!-- NAVIGATION BAR -->
-
-    <div class="navbar">
-
-        <div class="portal-name">
-
-            Organization Employee Portal
-
-        </div>
-
-
-        <a href="/logout" class="logout">
-
-            Logout
-
-        </a>
-
-    </div>
-
-
-
-    <!-- MAIN CONTENT -->
-
-    <div class="container">
-
-
-        <!-- WELCOME MESSAGE -->
-
-        <div class="welcome">
-
-            <h1>
-
-                Welcome, {{ username }}
-
-            </h1>
-
-
-            <p>
-
-                Manage your account and access your files.
-
-            </p>
-
-        </div>
-
-
-
-        <!-- DASHBOARD CARDS -->
-
-        <div class="cards">
-
-
-            <!-- FILES -->
-
-            <div class="card">
-
-                <h2>
-
-                    My Files
-
-                </h2>
-
-
-                <p>
-
-                    View and access your available files.
-
-                </p>
-
-
-                <a href="/files">
-
-                    View Files
-
-                </a>
-
-            </div>
-
-
-
-            <!-- PROFILE -->
-
-            <div class="card">
-
-                <h2>
-
-                    My Profile
-
-                </h2>
-
-
-                <p>
-
-                    View and update your profile information.
-
-                </p>
-
-
-                <a href="/profile">
-
-                    View Profile
-
-                </a>
-
-            </div>
-
-
-
-            <!-- SETTINGS -->
-
-            <div class="card">
-
-                <h2>
-
-                    Account Settings
-
-                </h2>
-
-
-                <p>
-
-                    Manage your account settings and password.
-
-                </p>
-
-
-                <a href="/settings">
-
-                    Settings
-
-                </a>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-
-</body>
-
-</html>
-
 
