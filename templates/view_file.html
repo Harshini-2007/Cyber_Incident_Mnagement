@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>View File | Employee Portal</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f6f8;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: #243b53;
+            color: white;
+            padding: 18px 40px;
+        }
+
+        .portal-name {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 25px;
+        }
+
+        .file-box {
+            background: white;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        h1 {
+            color: #1f2933;
+            margin-bottom: 25px;
+        }
+
+        .content {
+            background: #f4f6f8;
+            padding: 25px;
+            border-radius: 7px;
+            color: #334e68;
+            line-height: 1.7;
+            white-space: pre-line;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 25px;
+            color: #243b53;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="portal-name">
+            Organization Employee Portal
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="file-box">
+
+            <h1>
+                {{ filename }}
+            </h1>
+
+            <div class="content">
+Organization Employee Information
+
+This is a demonstration file for the Employee Portal.
+
+This file is used to demonstrate file access
+and file download activity monitoring.
+            </div>
+
+            <a href="/files" class="back">
+                ← Back to My Files
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

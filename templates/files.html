@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Files | Employee Portal</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f6f8;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: #243b53;
+            color: white;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .portal-name {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .back {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 25px;
+        }
+
+        h1 {
+            color: #1f2933;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7b8794;
+            margin-bottom: 30px;
+        }
+
+        .file-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .file-name {
+            color: #243447;
+            font-weight: 600;
+        }
+
+        .file-type {
+            color: #7b8794;
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .actions a {
+            text-decoration: none;
+            padding: 9px 15px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .view {
+            color: #243b53;
+            border: 1px solid #d9e2ec;
+        }
+
+        .download {
+            background: #243b53;
+            color: white;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="portal-name">
+            Organization Employee Portal
+        </div>
+
+        <a href="/dashboard" class="back">
+            Back to Dashboard
+        </a>
+
+    </div>
+
+
+    <div class="container">
+
+        <h1>
+            My Files
+        </h1>
+
+        <p class="subtitle">
+            Files available to you
+        </p>
+
+
+        <div class="file-card">
+
+            <div>
+
+                <div class="file-name">
+                    company_information.txt
+                </div>
+
+                <div class="file-type">
+                    Text Document
+                </div>
+
+            </div>
+
+
+            <div class="actions">
+
+                <a
+                    href="/files/view/company_information.txt"
+                    class="view"
+                >
+                    View
+                </a>
+
+                <a
+                    href="/files/download/company_information.txt"
+                    class="download"
+                >
+                    Download
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

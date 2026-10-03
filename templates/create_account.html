@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | Employee Portal</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #f4f6f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .register-box {
+            width: 400px;
+            background: white;
+            padding: 45px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .portal-name {
+            text-align: center;
+            color: #243447;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #1f2933;
+            font-size: 27px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #7b8794;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            color: #334e68;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #d9e2ec;
+            border-radius: 7px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #486581;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 7px;
+            background: #243b53;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            background: #334e68;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 22px;
+            font-size: 13px;
+            color: #7b8794;
+        }
+
+        .login-link a {
+            color: #243b53;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="register-box">
+
+        <div class="portal-name">
+            Organization Employee Portal
+        </div>
+
+        <h1>Create Account</h1>
+
+        <p class="subtitle">
+            Create your employee account
+        </p>
+
+        <form method="POST" action="/register">
+
+            <div class="form-group">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your username"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create a password"
+                    required
+                >
+
+            </div>
+
+            <button type="submit">
+                Create Account
+            </button>
+
+        </form>
+
+        <div class="login-link">
+            Already have an account?
+            <a href="/">
+                Sign in
+            </a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
